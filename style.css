@@ -1,0 +1,47 @@
+body {
+    background-color: #1d1f21;
+    color: #fcfcfc;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;  <-- Removed: flex-grow on main handles the spacing */
+    /* align-items: center;      <-- Removed: We handle alignment in 'main' now */
+    min-height: 100vh;           /* Changed to 100vh for cleaner full height */
+    margin: 0;
+}
+
+main {
+    flex-grow: 1;
+    /* ADDED: This centers the .container inside the main area */
+    display: flex;             
+    justify-content: center;   /* Horizontally center */
+    align-items: center;       /* Vertically center */
+}
+
+.container {
+    text-align: center;
+    /* width: 50%; */
+    /* height: 45%;  <-- Optional: removing this allows the box to shrink-wrap content, usually looks better */
+    border: 2px solid #3daee9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(61, 174, 233, 0.2);
+}
+
+footer {
+    background-color: #3daee9;
+    color: #fcfcfc;
+    font-family: sans-serif;
+    
+    /* ADDED: Needed for justify-content and align-items to work */
+    display: flex;             
+    justify-content: flex-end; /* 'right' works, but flex-end is standard flex syntax */
+    align-items: center;
+    
+    padding-right: 20px;
+    flex-shrink: 0;
+    height: 75px;  
+    width: 100%;               /* CHANGED: 100vw causes scrollbars, 100% fits the parent */
+    margin: 0;
+    box-sizing: border-box;    /* ADDED: Ensures padding doesn't add to the width */
+}
